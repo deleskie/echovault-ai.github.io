@@ -3,42 +3,26 @@ import { useState } from "react";
 export default function WaitlistCTA() {
   const [email, setEmail] = useState("");
   const [note, setNote] = useState("");
-  const [status, setStatus] = useState("idle"); // idle | submitting | success | error
-  const [error, setError] = useState("");
-  const [requireConfirmation, setRequireConfirmation] = useState(false);
+  const [status, setStatus] = useState("idle"); // idle | success
+
+  const waitlistMailto = (() => {
+    const subject = "EchoVault waitlist";
+    const body = [
+      "Please add me to the EchoVault waitlist.",
+      "",
+      `Email: ${email || "(not provided)"}`,
+      note ? `Note: ${note}` : "Note:",
+      "",
+      "Sent from the EchoVault website."
+    ].join("\n");
+
+    return `mailto:hello@echovault.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  })();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    if (status === "submitting") {
-      return;
-    }
-
-    setStatus("submitting");
-    setError("");
-
-    try {
-      const response = await fetch("/api/waitlist", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ email, note })
-      });
-
-      const payload = await response.json().catch(() => ({}));
-
-      if (!response.ok) {
-        throw new Error(payload.message || "Could not save your details");
-      }
-
-      setRequireConfirmation(Boolean(payload.requireConfirmation));
-      setStatus("success");
-      setEmail("");
-      setNote("");
-    } catch (err) {
-      setStatus("error");
-      setError(err.message || "Something went wrong, please try again in a moment.");
-    }
+    window.location.assign(waitlistMailto);
+    setStatus("success");
   };
 
   return (
@@ -67,24 +51,11 @@ export default function WaitlistCTA() {
         </div>
         {status === "success" ? (
           <div className="waitlist-form waitlist-success">
-            {requireConfirmation ? (
-              <>
-                <p className="waitlist-success-title">One more step.</p>
-                <p className="waitlist-success-text">
-                  Please check your email and confirm your subscription to finish joining the waitlist. We&apos;ll keep
-                  updates occasional and human.
-                </p>
-              </>
-            ) : (
-              <>
-                <p className="waitlist-success-title">You&apos;re on the list.</p>
-                <p className="waitlist-success-text">
-                  Thank you for trusting us with this. We&apos;ll send occasional updates and reach out when new
-                  availability opens. You&apos;re welcome to share this page with anyone else who should be part of the
-                  conversation.
-                </p>
-              </>
-            )}
+            <p className="waitlist-success-title">Check your email app.</p>
+            <p className="waitlist-success-text">
+              We opened an email to <a href="mailto:hello@echovault.com">hello@echovault.com</a> with your details.
+              Send it to join the waitlist.
+            </p>
             <p className="waitlist-success-text">
               If you need to talk through timing, email{" "}
               <a href="mailto:hello@echovault.com?subject=EchoVault%20Project%20Timing">hello@echovault.com</a>.
@@ -118,18 +89,12 @@ export default function WaitlistCTA() {
             <button
               type="submit"
               className="button button-primary button-full"
-              disabled={status === "submitting"}
             >
-              {status === "submitting" ? "Joining..." : "Join the waitlist"}
+              Join the waitlist
             </button>
             <p className="waitlist-footnote">
               We&apos;ll only use this to email EchoVault updates and availability. No spam, no sharing your email.
             </p>
-            {status === "error" && (
-              <p className="waitlist-error" role="status">
-                {error}
-              </p>
-            )}
           </form>
         )}
       </div>
