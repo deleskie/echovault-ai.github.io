@@ -32,6 +32,7 @@ export default function WaitlistCTA() {
   const [note, setNote] = useState("");
   const [status, setStatus] = useState("idle"); // idle | submitting | success | error
   const [error, setError] = useState("");
+  const [successMessage, setSuccessMessage] = useState("");
   const activeScriptRef = useRef(null);
 
   const submitViaMailchimp = async (event) => {
@@ -48,6 +49,7 @@ export default function WaitlistCTA() {
 
     setStatus("submitting");
     setError("");
+    setSuccessMessage("");
 
     const previous = activeScriptRef.current;
     if (previous) {
@@ -78,6 +80,7 @@ export default function WaitlistCTA() {
 
         if (result === "success") {
           setStatus("success");
+          setSuccessMessage(message);
           setEmail("");
           setNote("");
           return;
@@ -164,9 +167,13 @@ export default function WaitlistCTA() {
 
         {status === "success" ? (
           <div className="waitlist-form waitlist-success">
-            <p className="waitlist-success-title">You&apos;re on the list.</p>
+            <p className="waitlist-success-title">Mailchimp response</p>
             <p className="waitlist-success-text">
-              If Mailchimp requires confirmation, please check your inbox to finish joining.
+              {successMessage || "You&apos;re on the list."}
+            </p>
+            <p className="waitlist-success-text">
+              If you don&apos;t see a confirmation email and you expected one, check your Mailchimp audience for this
+              address—Mailchimp may have subscribed you immediately without double opt-in.
             </p>
           </div>
         ) : (
