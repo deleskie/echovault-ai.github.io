@@ -156,6 +156,13 @@ ul {
   box-shadow: 0 15px 45px rgba(111, 46, 229, 0.35);
 }
 
+.logo-mark img {
+  display: block;
+  width: 24px;
+  height: 24px;
+}
+
+
 .nav {
   display: flex;
   gap: 1.15rem;

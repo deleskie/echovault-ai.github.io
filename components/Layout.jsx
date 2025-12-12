@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import ThemeToggle from "./ThemeToggle";
 
@@ -8,7 +9,7 @@ export default function Layout({ children }) {
         <div className="content header-inner">
           <div className="logo-group" aria-label="EchoVault">
             <div className="logo-mark" aria-hidden="true">
-              EV
+              <Image src="/echovault-mark.svg" alt="" width={24} height={24} priority />
             </div>
             <div>
               <div className="logo">EchoVault</div>
