@@ -16,7 +16,7 @@ export default function Hero() {
             <a href="#waitlist" className="button button-primary">
               Join our waitlist
             </a>
-            <a href="mailto:hello@echovault-ai.com" className="button button-secondary">
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=hello@echovault-ai.com" className="button button-secondary">
               Talk with a human first
             </a>
           </div>

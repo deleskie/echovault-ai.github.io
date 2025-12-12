@@ -24,7 +24,7 @@ export default function Layout({ children }) {
           </nav>
           <div className="header-actions">
             <ThemeToggle />
-            <a href="mailto:hello@echovault-ai.com" className="header-talk-link">
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=hello@echovault-ai.com" className="header-talk-link">
               Talk with a human
             </a>
             <Link href="/#waitlist" className="button button-primary header-cta-button">
@@ -72,7 +72,7 @@ export default function Layout({ children }) {
                 <Link href="/trust">Trust & Safety</Link>
               </li>
               <li>
-                <a href="mailto:hello@echovault-ai.com">Contact</a>
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=hello@echovault-ai.com">Contact</a>
               </li>
             </ul>
           </div>

@@ -1,4 +1,4 @@
-import { useMemo, useRef, useState } from "react";
+import { useRef, useState } from "react";
 
 const MAILCHIMP_ACTION = process.env.NEXT_PUBLIC_MAILCHIMP_FORM_ACTION;
 const MAILCHIMP_HONEYPOT_NAME = process.env.NEXT_PUBLIC_MAILCHIMP_HONEYPOT_NAME;
@@ -17,26 +17,22 @@ function toMailchimpJsonpUrl(actionUrl) {
   return url;
 }
 
+function gmailComposeUrl({ to, subject, body }) {
+  const url = new URL("https://mail.google.com/mail/");
+  url.searchParams.set("view", "cm");
+  url.searchParams.set("fs", "1");
+  url.searchParams.set("to", to);
+  if (subject) url.searchParams.set("su", subject);
+  if (body) url.searchParams.set("body", body);
+  return url.toString();
+}
+
 export default function WaitlistCTA() {
   const [email, setEmail] = useState("");
   const [note, setNote] = useState("");
   const [status, setStatus] = useState("idle"); // idle | submitting | success | error
   const [error, setError] = useState("");
   const activeScriptRef = useRef(null);
-
-  const waitlistMailto = useMemo(() => {
-    const subject = "EchoVault waitlist";
-    const body = [
-      "Please add me to the EchoVault waitlist.",
-      "",
-      `Email: ${email || "(not provided)"}`,
-      note ? `Note: ${note}` : "Note:",
-      "",
-      "Sent from the EchoVault website."
-    ].join("\n");
-
-    return `mailto:hello@echovault-ai.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-  }, [email, note]);
 
   const submitViaMailchimp = async (event) => {
     event.preventDefault();
@@ -88,7 +84,7 @@ export default function WaitlistCTA() {
         }
 
         setStatus("error");
-        setError(message || "Could not add you to the waitlist. Please try again or email hello@echovault-ai.com.");
+        setError(message || "Could not add you to the waitlist. Please try again.");
       } finally {
         try {
           delete window[callbackName];
@@ -108,7 +104,7 @@ export default function WaitlistCTA() {
     script.async = true;
     script.onerror = () => {
       setStatus("error");
-      setError("Could not reach Mailchimp. Please try again or email hello@echovault-ai.com.");
+      setError("Could not reach Mailchimp. Please try again.");
 
       try {
         delete window[callbackName];
@@ -126,11 +122,20 @@ export default function WaitlistCTA() {
     document.body.appendChild(script);
   };
 
-  const submitViaMailto = (event) => {
-    event.preventDefault();
-    window.location.assign(waitlistMailto);
-    setStatus("success");
-  };
+  const fallbackEmailHref = gmailComposeUrl({
+    to: "hello@echovault-ai.com",
+    subject: "EchoVault waitlist",
+    body: [
+      "Please add me to the EchoVault waitlist.",
+      "",
+      `Email: ${email || ""}`,
+      note ? `Note: ${note}` : "",
+      "",
+      "Sent from the EchoVault website."
+    ]
+      .filter(Boolean)
+      .join("\n")
+  });
 
   return (
     <section id="waitlist" className="section section-muted" aria-labelledby="waitlist-heading">
@@ -141,13 +146,16 @@ export default function WaitlistCTA() {
           </h2>
           <p className="lead">
             EchoVault is in early availability with a small group of families. Join the waitlist and we&apos;ll send
-            occasional updates, plus availability when new project slots open. If you want, add a note about who you&apos;re
-            recording for and your timing.
+            occasional updates, plus availability when new project slots open.
           </p>
           <p className="waitlist-next-steps">
-            If you&apos;re trying to record soon—or you&apos;re considering a Legacy or Heirloom project—you can skip the
-            line and email us for a human reply:{" "}
-            <a className="waitlist-mail-link" href="mailto:hello@echovault-ai.com?subject=EchoVault%20Project%20Timing">
+            If you need a human reply, email us:{" "}
+            <a
+              className="waitlist-mail-link"
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=hello@echovault-ai.com&su=EchoVault%20Project%20Timing"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
               hello@echovault-ai.com
             </a>
             .
@@ -160,14 +168,9 @@ export default function WaitlistCTA() {
             <p className="waitlist-success-text">
               If Mailchimp requires confirmation, please check your inbox to finish joining.
             </p>
-            <p className="waitlist-success-text">
-              If you don&apos;t see anything, email{" "}
-              <a href="mailto:hello@echovault-ai.com?subject=EchoVault%20Waitlist">hello@echovault-ai.com</a> and we&apos;ll add
-              you manually.
-            </p>
           </div>
         ) : (
-          <form className="waitlist-form" onSubmit={MAILCHIMP_ACTION ? submitViaMailchimp : submitViaMailto}>
+          <form className="waitlist-form" onSubmit={MAILCHIMP_ACTION ? submitViaMailchimp : (e) => e.preventDefault()}>
             <label className="visually-hidden" htmlFor="waitlist-email">
               Email address
             </label>
@@ -191,16 +194,19 @@ export default function WaitlistCTA() {
               value={note}
               onChange={(event) => setNote(event.target.value)}
             />
+
             <button type="submit" className="button button-primary button-full" disabled={status === "submitting"}>
               {status === "submitting" ? "Joining..." : "Join the waitlist"}
             </button>
+
             <p className="waitlist-footnote">
               We&apos;ll only use this to email EchoVault updates and availability. No spam, no sharing your email.
             </p>
+
             {status === "error" ? (
               <p className="waitlist-error" role="status">
                 {error}{" "}
-                <a className="waitlist-mail-link" href={waitlistMailto}>
+                <a className="waitlist-mail-link" href={fallbackEmailHref} target="_blank" rel="noreferrer noopener">
                   Email us instead
                 </a>
                 .
