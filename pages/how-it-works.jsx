@@ -182,7 +182,7 @@ export default function HowItWorksPage() {
                   <Link href="/pricing" className="button button-primary">
                     Plan a project
                   </Link>
-                  <a href="mailto:hello@echovault.com" className="button button-secondary">
+                  <a href="mailto:hello@echovault-ai.com" className="button button-secondary">
                     Talk with a human
                   </a>
                 </div>
@@ -227,7 +227,7 @@ export default function HowItWorksPage() {
                   ))}
                 </div>
                 <div className="hiw-cta-actions hiw-cta-actions--center">
-                  <a className="button button-secondary" href="mailto:hello@echovault.com">
+                  <a className="button button-secondary" href="mailto:hello@echovault-ai.com">
                     Ask us anything
                   </a>
                   <Link href="/pricing" className="button button-primary">

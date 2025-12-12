@@ -203,10 +203,10 @@ export default function PricingPage() {
                         <a
                           href={
                             tier.id === "gift"
-                              ? "mailto:hello@echovault.com?subject=EchoVault%20Gift%20Tier"
+                              ? "mailto:hello@echovault-ai.com?subject=EchoVault%20Gift%20Tier"
                               : tier.id === "legacy"
-                                ? "mailto:hello@echovault.com?subject=EchoVault%20Legacy%20Project"
-                                : "mailto:hello@echovault.com?subject=EchoVault%20Heirloom%20Tier"
+                                ? "mailto:hello@echovault-ai.com?subject=EchoVault%20Legacy%20Project"
+                                : "mailto:hello@echovault-ai.com?subject=EchoVault%20Heirloom%20Tier"
                           }
                           className="button button-primary button-full"
                         >
@@ -231,10 +231,10 @@ export default function PricingPage() {
                 </p>
               </div>
               <div className="pricing-cta-actions pricing-cta-actions--center">
-                <a className="button button-primary" href="mailto:hello@echovault.com">
+                <a className="button button-primary" href="mailto:hello@echovault-ai.com">
                   Help Me Choose
                 </a>
-                <a className="button button-secondary" href="mailto:support@echovault.com">
+                <a className="button button-secondary" href="mailto:support@echovault-ai.com">
                   Talk to Support
                 </a>
               </div>
@@ -389,11 +389,11 @@ export default function PricingPage() {
               <div className="pricing-cta-actions pricing-cta-actions--center">
                 <a
                   className="button button-primary"
-                  href="mailto:hello@echovault.com?subject=EchoVault%20Project%20Planning"
+                  href="mailto:hello@echovault-ai.com?subject=EchoVault%20Project%20Planning"
                 >
                   Plan a project
                 </a>
-                <a className="button button-secondary" href="mailto:hello@echovault.com">
+                <a className="button button-secondary" href="mailto:hello@echovault-ai.com">
                   Talk with a human
                 </a>
               </div>

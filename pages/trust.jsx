@@ -108,7 +108,7 @@ export default function TrustPage() {
             </div>
 
             <div className="section-cta">
-              <a className="button button-primary" href="mailto:hello@echovault.com?subject=EchoVault%20Trust%20Question">
+              <a className="button button-primary" href="mailto:hello@echovault-ai.com?subject=EchoVault%20Trust%20Question">
                 Ask a trust question
               </a>
               <Link className="button button-secondary" href="/pricing">

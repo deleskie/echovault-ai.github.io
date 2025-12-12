@@ -16,7 +16,7 @@ export default function WaitlistCTA() {
       "Sent from the EchoVault website."
     ].join("\n");
 
-    return `mailto:hello@echovault.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    return `mailto:hello@echovault-ai.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   })();
 
   const handleSubmit = async (event) => {
@@ -42,9 +42,9 @@ export default function WaitlistCTA() {
             line and email us for a human reply:{" "}
             <a
               className="waitlist-mail-link"
-              href="mailto:hello@echovault.com?subject=EchoVault%20Project%20Timing"
+              href="mailto:hello@echovault-ai.com?subject=EchoVault%20Project%20Timing"
             >
-              hello@echovault.com
+              hello@echovault-ai.com
             </a>
             .
           </p>
@@ -53,12 +53,12 @@ export default function WaitlistCTA() {
           <div className="waitlist-form waitlist-success">
             <p className="waitlist-success-title">Check your email app.</p>
             <p className="waitlist-success-text">
-              We opened an email to <a href="mailto:hello@echovault.com">hello@echovault.com</a> with your details.
+              We opened an email to <a href="mailto:hello@echovault-ai.com">hello@echovault-ai.com</a> with your details.
               Send it to join the waitlist.
             </p>
             <p className="waitlist-success-text">
               If you need to talk through timing, email{" "}
-              <a href="mailto:hello@echovault.com?subject=EchoVault%20Project%20Timing">hello@echovault.com</a>.
+              <a href="mailto:hello@echovault-ai.com?subject=EchoVault%20Project%20Timing">hello@echovault-ai.com</a>.
             </p>
           </div>
         ) : (
@@ -70,7 +70,7 @@ export default function WaitlistCTA() {
               id="waitlist-email"
               type="email"
               required
-              placeholder="you@example.com"
+              placeholder="you@example-ai.com"
               className="waitlist-input"
               value={email}
               onChange={(event) => setEmail(event.target.value)}
