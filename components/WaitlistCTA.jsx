@@ -172,8 +172,9 @@ export default function WaitlistCTA() {
               {successMessage || "You&apos;re on the list."}
             </p>
             <p className="waitlist-success-text">
-              If you don&apos;t see a confirmation email and you expected one, check your Mailchimp audience for this
-              address—Mailchimp may have subscribed you immediately without double opt-in.
+              If you&apos;re using Gmail, check Spam and Promotions. If you find it there, open the email and click
+              &quot;Not spam&quot; (and optionally add hello@echovault-ai.com to your contacts) so future updates land in
+              your inbox.
             </p>
           </div>
         ) : (
