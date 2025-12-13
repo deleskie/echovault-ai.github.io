@@ -29,7 +29,7 @@ export default function EchoesInTheGridPage() {
       </Head>
       <Layout>
         <article className="blog-article">
-          <header className="blog-hero blog-hero--twin">
+          <header className="blog-hero blog-hero--manifesto">
             <div className="content blog-hero-inner">
               <p className="blog-hero-kicker">Founder story</p>
               <h1 className="blog-hero-title">Echoes in the Grid: Why I Built EchoVault</h1>

@@ -1068,7 +1068,8 @@ button:focus-visible {
 
 .blog-hero.blog-hero--twin,
 .blog-hero.blog-hero--grief,
-.blog-hero.blog-hero--families {
+.blog-hero.blog-hero--families,
+.blog-hero.blog-hero--manifesto {
   color: #f9fafb;
 }
 
@@ -1170,6 +1171,43 @@ button:focus-visible {
       url("/images/blog/families-letters.jpg") 1x
     ),
     radial-gradient(circle at top right, rgba(129, 140, 248, 0.35), transparent 60%);
+}
+
+.blog-hero--manifesto::before {
+  background-image:
+    radial-gradient(circle at 70% 42%, rgba(15, 23, 42, 0.45), rgba(15, 23, 42, 0.88) 68%),
+    url("/images/blog/echoes-grid.jpg"),
+    radial-gradient(circle at top right, rgba(129, 140, 248, 0.28), transparent 62%);
+  background-image:
+    radial-gradient(circle at 70% 42%, rgba(15, 23, 42, 0.45), rgba(15, 23, 42, 0.88) 68%),
+    -webkit-image-set(
+      url("/images/blog/echoes-grid.webp") 1x,
+      url("/images/blog/echoes-grid.jpg") 1x
+    ),
+    radial-gradient(circle at top right, rgba(129, 140, 248, 0.28), transparent 62%);
+  background-image:
+    radial-gradient(circle at 70% 42%, rgba(15, 23, 42, 0.45), rgba(15, 23, 42, 0.88) 68%),
+    image-set(
+      url("/images/blog/echoes-grid.webp") 1x,
+      url("/images/blog/echoes-grid.jpg") 1x
+    ),
+    radial-gradient(circle at top right, rgba(129, 140, 248, 0.28), transparent 62%);
+  background-position: center right;
+}
+
+.blog-hero--manifesto::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background: radial-gradient(circle at center, rgba(0, 0, 0, 0) 35%, rgba(0, 0, 0, 0.62) 100%);
+}
+
+.blog-hero--manifesto::before {
+  filter: saturate(1.08) contrast(1.08) blur(14px);
+  transform: scale(1.05);
+  transform-origin: center;
 }
 
 .blog-hero-kicker {
