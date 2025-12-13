@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
+import { useI18n } from "./I18nProvider";
 
 const STORAGE_KEY = "echovault-theme";
 
 export default function ThemeToggle() {
   const [theme, setTheme] = useState("dark");
   const [ready, setReady] = useState(false);
+  const { t } = useI18n();
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -33,12 +35,14 @@ export default function ThemeToggle() {
       type="button"
       className="theme-toggle"
       onClick={toggleTheme}
-      aria-label="Toggle color mode"
+      aria-label={t.themeToggle.aria}
       aria-pressed={theme === "dark"}
       disabled={!ready}
     >
       <span className="theme-toggle-knob" />
-      <span className="theme-toggle-label">{theme === "dark" ? "Dark" : "Light"}</span>
+      <span className="theme-toggle-label">
+        {theme === "dark" ? t.themeToggle.dark : t.themeToggle.light}
+      </span>
     </button>
   );
 }

@@ -2,75 +2,49 @@ import Head from "next/head";
 import Link from "next/link";
 import Layout from "@components/Layout";
 import TrustBlock from "@components/TrustBlock";
+import { useI18n } from "@components/I18nProvider";
+import { getAlternateLinks, localizePath } from "@config/i18n";
 import { SITE_URL } from "@config/site";
 
-const steps = [
-  {
-    title: "Record Their Story",
-    description:
-      "An AI-guided interviewer gently walks your loved one through thoughtful prompts about childhood, turning points, values, and the small details that make their story theirs. You can be present, join remotely, or let them record on their own schedule.",
-    note: "Most families start with one 60–90 minute session (Gift), and add more over a few weeks for Legacy or Heirloom projects.",
-    icon: MicrophoneIcon
-  },
-  {
-    title: "We Build Their Echo",
-    description:
-      "We use those conversations to train a tailored Echo that reflects their voice, perspective, and way of explaining things. We preserve their pace, their phrases, and the stories they choose to share.",
-    note: "We usually prepare the first version of the Echo within a short time after your recording sessions wrap, then refine it with you.",
-    icon: NeuralIcon
-  },
-  {
-    title: "Talk to Them Anytime",
-    description:
-      "Family members can return whenever they want—asking questions, revisiting memories, or exploring new topics with the Echo in a private, secure space. It’s designed to feel calm and always-available.",
-    note: "Families often tell us it feels grounding—like having a quiet room they can step into when they need to hear that voice again.",
-    icon: ChatIcon
-  }
-];
-
-const faqs = [
-  {
-    question: "Is this safe?",
-    answer:
-      "EchoVault is being built with safety, consent, and privacy as first principles. Our goal is a private, access-controlled space with industry-standard protections (including encryption in transit and at rest) as the product matures. If you have specific requirements, ask and we’ll tell you what’s available now and what’s in progress."
-  },
-  {
-    question: "Is this weird?",
-    answer:
-      "It’s new, and it’s emotional—but it doesn’t have to be strange. EchoVault is about preserving real stories in their own words, not pretending someone is still here. Most families describe it as a comforting, human way to stay connected."
-  },
-  {
-    question: "How is this different from just recording video?",
-    answer:
-      "Video is wonderful—but it’s fixed. An Echo lets you keep asking new questions over time and explore different parts of someone’s story, even long after the original sessions are over. Many families use both together."
-  },
-  {
-    question: "What happens if we change our minds?",
-    answer:
-      "You stay in control. If you decide EchoVault isn’t right for you, we can remove access and delete recordings and derived data. We’ll always explain what stays and what’s gone in clear language."
-  }
-];
-
 export default function HowItWorksPage() {
+  const { locale, t } = useI18n();
+  const alternateLinks = getAlternateLinks(SITE_URL, "/how-it-works");
+  const canonicalUrl =
+    alternateLinks.find((alt) => alt.locale === locale)?.href || `${SITE_URL}/how-it-works`;
+
+  const localized = (path) => localizePath(locale, path);
+
+  const stepIcons = [MicrophoneIcon, NeuralIcon, ChatIcon];
+  const steps = t.howItWorksPage.steps.map((step, index) => ({
+    ...step,
+    icon: stepIcons[index] || MicrophoneIcon
+  }));
+
+  const faqs = t.howItWorksPage.faq.items;
+
   return (
     <>
       <Head>
-        <title>How EchoVault Works — Guided, careful, human</title>
+        <title>{t.howItWorksPage.metaTitle}</title>
         <meta
           name="description"
-          content="See exactly how EchoVault uses gentle, AI-supported interviews to capture stories, build a respectful conversational Echo, and keep your family connected to a loved one’s wisdom."
+          content={t.howItWorksPage.metaDescription}
         />
-        <meta property="og:title" content="How EchoVault Works — Guided, careful, human" />
+        <meta property="og:title" content={t.howItWorksPage.metaTitle} />
         <meta
           property="og:description"
-          content="A guided, human-centered way to record stories, build a conversational Echo with AI, and talk to them anytime in a private digital legacy space."
+          content={t.howItWorksPage.ogDescription}
         />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content={`${SITE_URL}/how-it-works`} />
+        <meta property="og:url" content={canonicalUrl} />
         <meta property="og:image" content={`${SITE_URL}/social/og-link-card.svg`} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:image" content={`${SITE_URL}/social/og-link-card.svg`} />
-        <link rel="canonical" href={`${SITE_URL}/how-it-works`} />
+        <link rel="canonical" href={canonicalUrl} />
+        {alternateLinks.map((alt) => (
+          <link key={alt.hrefLang} rel="alternate" hrefLang={alt.hrefLang} href={alt.href} />
+        ))}
+        <link rel="alternate" hrefLang="x-default" href={`${SITE_URL}/how-it-works`} />
       </Head>
       <Layout>
         <div className="hiw-page">
@@ -81,21 +55,20 @@ export default function HowItWorksPage() {
                   EV
                 </div>
                 <h1 id="how-heading" className="hiw-hero-title">
-                  How EchoVault Works, Step by Step
+                  {t.howItWorksPage.hero.title}
                 </h1>
                 <p className="hiw-hero-subtitle">
-                  A guided, human-centered way to preserve the stories that matter. We keep the experience calm, clear,
-                  and respectful—so you focus on the person, not the technology.
+                  {t.howItWorksPage.hero.subtitle}
                 </p>
                 <p className="hiw-hero-support">
-                  EchoVault stays gentle, transparent, and human at every point—no surprises, no pressure.
+                  {t.howItWorksPage.hero.support}
                 </p>
                 <div className="hiw-hero-actions" aria-label="Primary actions">
-                  <Link href="/pricing" className="button button-primary">
-                    Plan a project
+                  <Link href={localized("/pricing")} className="button button-primary">
+                    {t.howItWorksPage.hero.primaryCta}
                   </Link>
-                  <Link href="/how-it-works#faq" className="button button-secondary">
-                    See FAQs
+                  <Link href={`${localized("/how-it-works")}#faq`} className="button button-secondary">
+                    {t.howItWorksPage.hero.secondaryCta}
                   </Link>
                 </div>
               </div>
@@ -105,9 +78,9 @@ export default function HowItWorksPage() {
           <section className="section hiw-surface-alt" aria-labelledby="steps-heading">
             <div className="content">
               <div className="hiw-steps-header">
-                <p className="hiw-intro">EchoVault is designed to feel gentle, simple, and guided.</p>
+                <p className="hiw-intro">{t.howItWorksPage.journey.intro}</p>
                 <h2 id="steps-heading" className="hiw-section-title">
-                  The EchoVault journey
+                  {t.howItWorksPage.journey.heading}
                 </h2>
               </div>
               <div className="hiw-steps-grid">
@@ -116,7 +89,9 @@ export default function HowItWorksPage() {
                   return (
                     <article key={step.title} className="hiw-step-card">
                       <Icon />
-                      <p className="hiw-step-label">Step {index + 1}</p>
+                      <p className="hiw-step-label">
+                        {t.howItWorksPage.journey.stepLabel} {index + 1}
+                      </p>
                       <h3 className="hiw-step-title">{step.title}</h3>
                       <p className="hiw-step-body">{step.description}</p>
                       <p className="hiw-step-note">{step.note}</p>
@@ -131,41 +106,20 @@ export default function HowItWorksPage() {
             <div className="content">
               <div className="hiw-trust">
                 <h2 id="roles-heading" className="hiw-trust-title">
-                  Who&apos;s involved in an EchoVault project
+                  {t.howItWorksPage.roles.heading}
                 </h2>
                 <p className="hiw-trust-copy">
-                  Most EchoVault projects involve three roles. You don&apos;t need all the details figured out before
-                  you start—we&apos;ll help you decide who sits where.
+                  {t.howItWorksPage.roles.copy}
                 </p>
               </div>
               <div className="hiw-steps-grid">
-                <article className="hiw-step-card">
-                  <p className="hiw-step-label">The storyteller</p>
-                  <h3 className="hiw-step-title">The person whose story we&apos;re capturing</h3>
-                  <p className="hiw-step-body">
-                    The storyteller is the person speaking—your parent, partner, grandparent, or you. They set the pace,
-                    choose what to share, and can always pause or skip questions. Our job is to make it feel like a
-                    calm, respectful conversation.
-                  </p>
-                </article>
-                <article className="hiw-step-card">
-                  <p className="hiw-step-label">The organizer</p>
-                  <h3 className="hiw-step-title">The person coordinating behind the scenes</h3>
-                  <p className="hiw-step-body">
-                    The organizer is often an adult child, partner, or close friend. They help with scheduling,
-                    logistics, and deciding who to invite. We give organizers clear guidance so they don&apos;t have to
-                    figure it out alone.
-                  </p>
-                </article>
-                <article className="hiw-step-card">
-                  <p className="hiw-step-label">Family listeners</p>
-                  <h3 className="hiw-step-title">The people who return to the Echo</h3>
-                  <p className="hiw-step-body">
-                    Family listeners are the people who come back later—kids, siblings, grandkids, close friends.
-                    They&apos;re the ones asking new questions, revisiting stories on hard days, and discovering pieces
-                    of the story they hadn&apos;t heard before.
-                  </p>
-                </article>
+                {t.howItWorksPage.roles.cards.map((card) => (
+                  <article key={card.title} className="hiw-step-card">
+                    <p className="hiw-step-label">{card.label}</p>
+                    <h3 className="hiw-step-title">{card.title}</h3>
+                    <p className="hiw-step-body">{card.body}</p>
+                  </article>
+                ))}
               </div>
             </div>
           </section>
@@ -173,17 +127,16 @@ export default function HowItWorksPage() {
           <section className="section hiw-cta-section" aria-label="Start recording">
             <div className="content">
               <div className="hiw-cta-block">
-                <h3 className="hiw-cta-title">Start Your First Recording</h3>
+                <h3 className="hiw-cta-title">{t.howItWorksPage.cta.title}</h3>
                 <p className="hiw-cta-text">
-                  Sit down with someone you love, keep it calm and guided, and leave with something you can return to
-                  anytime.
+                  {t.howItWorksPage.cta.text}
                 </p>
                 <div className="hiw-cta-actions">
-                  <Link href="/pricing" className="button button-primary">
-                    Plan a project
+                  <Link href={localized("/pricing")} className="button button-primary">
+                    {t.howItWorksPage.cta.primaryCta}
                   </Link>
                   <a href="https://mail.google.com/mail/?view=cm&fs=1&to=hello@echovault-ai.com" className="button button-secondary">
-                    Talk with a human
+                    {t.howItWorksPage.cta.secondaryCta}
                   </a>
                 </div>
               </div>
@@ -194,11 +147,10 @@ export default function HowItWorksPage() {
             <div className="content">
               <div className="hiw-trust">
                 <h2 id="trust-heading" className="hiw-trust-title">
-                  Built for trust and care
+                  {t.howItWorksPage.trust.heading}
                 </h2>
                 <p className="hiw-trust-copy">
-                  From consent to access control to deletion, you stay in control. We keep everything in a calm,
-                  access-controlled space and explain every step in plain language.
+                  {t.howItWorksPage.trust.copy}
                 </p>
               </div>
               <TrustBlock headingId="hiw-trust-block-heading" />
@@ -209,7 +161,7 @@ export default function HowItWorksPage() {
             <div className="content">
               <div className="hiw-faq-card">
                 <h2 id="faq-heading" className="hiw-section-title">
-                  Questions families often ask
+                  {t.howItWorksPage.faq.heading}
                 </h2>
                 <div className="hiw-faq-accordions">
                   {faqs.map((faq) => (
@@ -228,15 +180,15 @@ export default function HowItWorksPage() {
                 </div>
                 <div className="hiw-cta-actions hiw-cta-actions--center">
                   <a className="button button-secondary" href="https://mail.google.com/mail/?view=cm&fs=1&to=hello@echovault-ai.com">
-                    Ask us anything
+                    {t.howItWorksPage.faq.secondaryCta}
                   </a>
-                  <Link href="/pricing" className="button button-primary">
-                    Plan a project
+                  <Link href={localized("/pricing")} className="button button-primary">
+                    {t.howItWorksPage.faq.primaryCta}
                   </Link>
                 </div>
                 <p className="blog-back-link">
                   <Link href="/blog/echoes-in-the-grid">
-                    Read the founder&apos;s story of why EchoVault exists
+                    {t.howItWorksPage.faq.blogLinkText}
                   </Link>
                 </p>
               </div>
@@ -246,17 +198,16 @@ export default function HowItWorksPage() {
           <section className="section hiw-footer-cta" aria-label="Final call to action">
             <div className="content">
               <div className="hiw-footer-cta-inner">
-                <h3 className="hiw-footer-cta-title">Ready when you are.</h3>
+                <h3 className="hiw-footer-cta-title">{t.howItWorksPage.footer.title}</h3>
                 <p className="hiw-footer-cta-text">
-                  Preserve the stories, laughter, and wisdom you don’t want to lose—gently, respectfully, and with the
-                  people you love.
+                  {t.howItWorksPage.footer.text}
                 </p>
                 <div className="hiw-cta-actions hiw-cta-actions--center">
-                  <Link href="/pricing" className="button button-primary">
-                    Plan a project
+                  <Link href={localized("/pricing")} className="button button-primary">
+                    {t.howItWorksPage.footer.primaryCta}
                   </Link>
-                  <Link href="/pricing" className="button button-secondary">
-                    See pricing
+                  <Link href={localized("/pricing")} className="button button-secondary">
+                    {t.howItWorksPage.footer.secondaryCta}
                   </Link>
                 </div>
               </div>
