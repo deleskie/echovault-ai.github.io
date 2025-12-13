@@ -1082,26 +1082,26 @@ button:focus-visible {
   position: absolute;
   inset: 0;
   background: radial-gradient(circle at top left, rgba(251, 146, 60, 0.25), transparent 60%);
-  opacity: 0.9;
+  opacity: 1;
   background-size: cover;
   background-position: center;
-  filter: saturate(0.95) contrast(0.95);
+  filter: saturate(1.05) contrast(1.04);
 }
 
 .blog-hero--recorded::before {
   background-image:
-    linear-gradient(135deg, rgba(248, 250, 252, 0.96), rgba(254, 243, 199, 0.95)),
+    linear-gradient(135deg, rgba(248, 250, 252, 0.72), rgba(254, 243, 199, 0.58)),
     url("/images/blog/recorded-chair.jpg"),
     radial-gradient(circle at top left, rgba(251, 146, 60, 0.28), transparent 60%);
   background-image:
-    linear-gradient(135deg, rgba(248, 250, 252, 0.96), rgba(254, 243, 199, 0.95)),
+    linear-gradient(135deg, rgba(248, 250, 252, 0.72), rgba(254, 243, 199, 0.58)),
     -webkit-image-set(
       url("/images/blog/recorded-chair.webp") 1x,
       url("/images/blog/recorded-chair.jpg") 1x
     ),
     radial-gradient(circle at top left, rgba(251, 146, 60, 0.28), transparent 60%);
   background-image:
-    linear-gradient(135deg, rgba(248, 250, 252, 0.96), rgba(254, 243, 199, 0.95)),
+    linear-gradient(135deg, rgba(248, 250, 252, 0.72), rgba(254, 243, 199, 0.58)),
     image-set(
       url("/images/blog/recorded-chair.webp") 1x,
       url("/images/blog/recorded-chair.jpg") 1x
@@ -1111,18 +1111,18 @@ button:focus-visible {
 
 .blog-hero--grief::before {
   background-image:
-    linear-gradient(135deg, rgba(15, 23, 42, 0.98), rgba(15, 118, 110, 0.9)),
+    linear-gradient(135deg, rgba(15, 23, 42, 0.72), rgba(15, 118, 110, 0.55)),
     url("/images/blog/grief-notebook.jpg"),
     radial-gradient(circle at top left, rgba(56, 189, 248, 0.35), transparent 60%);
   background-image:
-    linear-gradient(135deg, rgba(15, 23, 42, 0.98), rgba(15, 118, 110, 0.9)),
+    linear-gradient(135deg, rgba(15, 23, 42, 0.72), rgba(15, 118, 110, 0.55)),
     -webkit-image-set(
       url("/images/blog/grief-notebook.webp") 1x,
       url("/images/blog/grief-notebook.jpg") 1x
     ),
     radial-gradient(circle at top left, rgba(56, 189, 248, 0.35), transparent 60%);
   background-image:
-    linear-gradient(135deg, rgba(15, 23, 42, 0.98), rgba(15, 118, 110, 0.9)),
+    linear-gradient(135deg, rgba(15, 23, 42, 0.72), rgba(15, 118, 110, 0.55)),
     image-set(
       url("/images/blog/grief-notebook.webp") 1x,
       url("/images/blog/grief-notebook.jpg") 1x
@@ -1132,18 +1132,18 @@ button:focus-visible {
 
 .blog-hero--twin::before {
   background-image:
-    linear-gradient(135deg, rgba(15, 23, 42, 0.98), rgba(76, 29, 149, 0.9)),
+    linear-gradient(135deg, rgba(15, 23, 42, 0.74), rgba(76, 29, 149, 0.56)),
     url("/images/blog/twin-desk.jpg"),
     radial-gradient(circle at top right, rgba(129, 140, 248, 0.35), transparent 60%);
   background-image:
-    linear-gradient(135deg, rgba(15, 23, 42, 0.98), rgba(76, 29, 149, 0.9)),
+    linear-gradient(135deg, rgba(15, 23, 42, 0.74), rgba(76, 29, 149, 0.56)),
     -webkit-image-set(
       url("/images/blog/twin-desk.webp") 1x,
       url("/images/blog/twin-desk.jpg") 1x
     ),
     radial-gradient(circle at top right, rgba(129, 140, 248, 0.35), transparent 60%);
   background-image:
-    linear-gradient(135deg, rgba(15, 23, 42, 0.98), rgba(76, 29, 149, 0.9)),
+    linear-gradient(135deg, rgba(15, 23, 42, 0.74), rgba(76, 29, 149, 0.56)),
     image-set(
       url("/images/blog/twin-desk.webp") 1x,
       url("/images/blog/twin-desk.jpg") 1x
@@ -1153,18 +1153,18 @@ button:focus-visible {
 
 .blog-hero--families::before {
   background-image:
-    linear-gradient(135deg, rgba(15, 23, 42, 0.98), rgba(76, 29, 149, 0.9)),
+    linear-gradient(135deg, rgba(15, 23, 42, 0.74), rgba(76, 29, 149, 0.56)),
     url("/images/blog/families-letters.jpg"),
     radial-gradient(circle at top right, rgba(129, 140, 248, 0.35), transparent 60%);
   background-image:
-    linear-gradient(135deg, rgba(15, 23, 42, 0.98), rgba(76, 29, 149, 0.9)),
+    linear-gradient(135deg, rgba(15, 23, 42, 0.74), rgba(76, 29, 149, 0.56)),
     -webkit-image-set(
       url("/images/blog/families-letters.webp") 1x,
       url("/images/blog/families-letters.jpg") 1x
     ),
     radial-gradient(circle at top right, rgba(129, 140, 248, 0.35), transparent 60%);
   background-image:
-    linear-gradient(135deg, rgba(15, 23, 42, 0.98), rgba(76, 29, 149, 0.9)),
+    linear-gradient(135deg, rgba(15, 23, 42, 0.74), rgba(76, 29, 149, 0.56)),
     image-set(
       url("/images/blog/families-letters.webp") 1x,
       url("/images/blog/families-letters.jpg") 1x
