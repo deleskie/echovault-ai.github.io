@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 import ThemeToggle from "./ThemeToggle";
 import { useI18n } from "./I18nProvider";
 import {
@@ -16,6 +17,7 @@ import {
 export default function Layout({ children }) {
   const router = useRouter();
   const { locale, t } = useI18n();
+  const [languageMenuOpen, setLanguageMenuOpen] = useState(false);
 
   const localized = (path) => localizePath(locale, path);
 
@@ -34,11 +36,22 @@ export default function Layout({ children }) {
     };
   });
 
+  useEffect(() => {
+    const closeMenus = () => {
+      setLanguageMenuOpen(false);
+    };
+
+    router.events.on("routeChangeStart", closeMenus);
+    return () => {
+      router.events.off("routeChangeStart", closeMenus);
+    };
+  }, [router.events]);
+
   return (
     <div className="site">
       <header className="site-header">
         <div className="content header-inner">
-          <div className="logo-group" aria-label="EchoVault">
+          <Link href={localized("/")} className="logo-group" aria-label="EchoVault">
             <div className="logo-mark" aria-hidden="true">
               <Image src="/echovault-mark.svg" alt="" width={24} height={24} priority />
             </div>
@@ -46,27 +59,55 @@ export default function Layout({ children }) {
               <div className="logo">EchoVault</div>
               <span className="logo-tagline">{t.layout.logoTagline}</span>
             </div>
-          </div>
+          </Link>
           <nav className="nav" aria-label="Primary">
-            <Link href={localized("/")}>{t.layout.nav.home}</Link>
             <Link href={localized("/pricing")}>{t.layout.nav.pricing}</Link>
             <Link href={localized("/how-it-works")}>{t.layout.nav.howItWorks}</Link>
             <Link href="/blog">{t.layout.nav.blog}</Link>
           </nav>
           <div className="header-actions">
             <ThemeToggle />
-            <div className="lang-switch" aria-label="Language">
-              {languageLinks.map((link) => (
-                <Link
-                  key={link.locale}
-                  href={link.href}
-                  className={`lang-link ${link.active ? "is-active" : ""}`}
-                >
-                  {link.label}
-                </Link>
-              ))}
-            </div>
-            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=hello@echovault-ai.com" className="header-talk-link">
+            <details
+              className="lang-menu"
+              open={languageMenuOpen}
+              onToggle={(event) => setLanguageMenuOpen(event.currentTarget.open)}
+            >
+              <summary className="lang-menu-trigger" aria-label="Language">
+                <span className="lang-menu-icon" aria-hidden="true">
+                  🌐
+                </span>
+                <span className="lang-menu-current">{getLocaleConfig(locale).label}</span>
+                <span className="lang-menu-caret" aria-hidden="true">
+                  ▾
+                </span>
+              </summary>
+              <div className="lang-menu-panel">
+                {languageLinks.map((link) =>
+                  link.active ? (
+                    <span
+                      key={link.locale}
+                      className="lang-menu-item is-active"
+                      aria-current="true"
+                    >
+                      {link.label}
+                    </span>
+                  ) : (
+                    <Link
+                      key={link.locale}
+                      href={link.href}
+                      className="lang-menu-item"
+                      onClick={() => setLanguageMenuOpen(false)}
+                    >
+                      {link.label}
+                    </Link>
+                  )
+                )}
+              </div>
+            </details>
+            <a
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=hello@echovault-ai.com"
+              className="header-talk-link"
+            >
               {t.layout.actions.talkHuman}
             </a>
             <Link
