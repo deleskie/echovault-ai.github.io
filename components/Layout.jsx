@@ -105,7 +105,7 @@ export default function Layout({ children }) {
               </div>
             </details>
             <a
-              href="https://mail.google.com/mail/?view=cm&fs=1&to=hello@echovault-ai.com"
+              href="mailto:hello@echovault-ai.com"
               className="header-talk-link"
             >
               {t.layout.actions.talkHuman}
@@ -158,7 +158,7 @@ export default function Layout({ children }) {
                 <Link href={localized("/trust")}>{t.layout.footer.trust}</Link>
               </li>
               <li>
-                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=hello@echovault-ai.com">{t.layout.footer.contact}</a>
+                <a href="mailto:hello@echovault-ai.com">{t.layout.footer.contact}</a>
               </li>
             </ul>
           </div>

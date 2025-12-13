@@ -15,7 +15,7 @@ export default function Hero() {
           </p>
           <div className="hero-actions">
             <a href="#waitlist" className="button button-primary">{t.hero.primaryCta}</a>
-            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=hello@echovault-ai.com" className="button button-secondary">
+            <a href="mailto:hello@echovault-ai.com" className="button button-secondary">
               {t.hero.secondaryCta}
             </a>
           </div>

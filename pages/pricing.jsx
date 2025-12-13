@@ -157,10 +157,10 @@ export default function PricingPage() {
                 </p>
               </div>
               <div className="pricing-cta-actions pricing-cta-actions--center">
-                <a className="button button-primary" href="https://mail.google.com/mail/?view=cm&fs=1&to=hello@echovault-ai.com">
+                <a className="button button-primary" href="mailto:hello@echovault-ai.com">
                   {t.pricing.guidance.primaryCta}
                 </a>
-                <a className="button button-secondary" href="https://mail.google.com/mail/?view=cm&fs=1&to=support@echovault-ai.com">
+                <a className="button button-secondary" href="mailto:support@echovault-ai.com">
                   {t.pricing.guidance.secondaryCta}
                 </a>
               </div>
@@ -266,11 +266,11 @@ export default function PricingPage() {
               <div className="pricing-cta-actions pricing-cta-actions--center">
                 <a
                   className="button button-primary"
-                  href="https://mail.google.com/mail/?view=cm&fs=1&to=hello@echovault-ai.com&su=EchoVault%20Project%20Planning"
+                  href="mailto:hello@echovault-ai.com?subject=EchoVault%20Project%20Planning"
                 >
                   {t.pricing.finalCta.primaryCta}
                 </a>
-                <a className="button button-secondary" href="https://mail.google.com/mail/?view=cm&fs=1&to=hello@echovault-ai.com">
+                <a className="button button-secondary" href="mailto:hello@echovault-ai.com">
                   {t.pricing.finalCta.secondaryCta}
                 </a>
               </div>

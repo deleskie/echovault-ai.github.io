@@ -178,7 +178,7 @@ export default function WaitlistCTA() {
             {t.waitlist.nextSteps}{" "}
             <a
               className="waitlist-mail-link"
-              href="https://mail.google.com/mail/?view=cm&fs=1&to=hello@echovault-ai.com&su=EchoVault%20Project%20Timing"
+              href="mailto:hello@echovault-ai.com?subject=EchoVault%20Project%20Timing"
             >
               hello@echovault-ai.com
             </a>
@@ -209,7 +209,7 @@ export default function WaitlistCTA() {
             )}
             <p className="waitlist-success-text">
               {t.waitlist.successFollowup}{" "}
-              <a href="https://mail.google.com/mail/?view=cm&fs=1&to=hello@echovault-ai.com&su=EchoVault%20Project%20Timing">
+              <a href="mailto:hello@echovault-ai.com?subject=EchoVault%20Project%20Timing">
                 hello@echovault-ai.com
               </a>
               .

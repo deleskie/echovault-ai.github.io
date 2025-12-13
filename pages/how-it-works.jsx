@@ -135,7 +135,7 @@ export default function HowItWorksPage() {
                   <Link href={localized("/pricing")} className="button button-primary">
                     {t.howItWorksPage.cta.primaryCta}
                   </Link>
-                  <a href="https://mail.google.com/mail/?view=cm&fs=1&to=hello@echovault-ai.com" className="button button-secondary">
+                  <a href="mailto:hello@echovault-ai.com" className="button button-secondary">
                     {t.howItWorksPage.cta.secondaryCta}
                   </a>
                 </div>
@@ -179,7 +179,7 @@ export default function HowItWorksPage() {
                   ))}
                 </div>
                 <div className="hiw-cta-actions hiw-cta-actions--center">
-                  <a className="button button-secondary" href="https://mail.google.com/mail/?view=cm&fs=1&to=hello@echovault-ai.com">
+                  <a className="button button-secondary" href="mailto:hello@echovault-ai.com">
                     {t.howItWorksPage.faq.secondaryCta}
                   </a>
                   <Link href={localized("/pricing")} className="button button-primary">
