@@ -29,7 +29,7 @@ export default function WhatFamiliesWantFromDigitalTwinPage() {
       </Head>
       <Layout>
         <article className="blog-article">
-          <header className="blog-hero blog-hero--twin">
+          <header className="blog-hero blog-hero--families">
             <div className="content blog-hero-inner">
               <p className="blog-hero-kicker">Listening and insight</p>
               <h1 className="blog-hero-title">What families actually want from a digital twin</h1>

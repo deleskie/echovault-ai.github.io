@@ -1067,7 +1067,8 @@ button:focus-visible {
 }
 
 .blog-hero.blog-hero--twin,
-.blog-hero.blog-hero--grief {
+.blog-hero.blog-hero--grief,
+.blog-hero.blog-hero--families {
   color: #f9fafb;
 }
 
@@ -1146,6 +1147,27 @@ button:focus-visible {
     image-set(
       url("/images/blog/twin-desk.webp") 1x,
       url("/images/blog/twin-desk.jpg") 1x
+    ),
+    radial-gradient(circle at top right, rgba(129, 140, 248, 0.35), transparent 60%);
+}
+
+.blog-hero--families::before {
+  background-image:
+    linear-gradient(135deg, rgba(15, 23, 42, 0.98), rgba(76, 29, 149, 0.9)),
+    url("/images/blog/families-twin.jpg"),
+    radial-gradient(circle at top right, rgba(129, 140, 248, 0.35), transparent 60%);
+  background-image:
+    linear-gradient(135deg, rgba(15, 23, 42, 0.98), rgba(76, 29, 149, 0.9)),
+    -webkit-image-set(
+      url("/images/blog/families-twin.webp") 1x,
+      url("/images/blog/families-twin.jpg") 1x
+    ),
+    radial-gradient(circle at top right, rgba(129, 140, 248, 0.35), transparent 60%);
+  background-image:
+    linear-gradient(135deg, rgba(15, 23, 42, 0.98), rgba(76, 29, 149, 0.9)),
+    image-set(
+      url("/images/blog/families-twin.webp") 1x,
+      url("/images/blog/families-twin.jpg") 1x
     ),
     radial-gradient(circle at top right, rgba(129, 140, 248, 0.35), transparent 60%);
 }
