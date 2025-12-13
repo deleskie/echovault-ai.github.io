@@ -161,7 +161,11 @@ export default function WaitlistCTA() {
   };
 
   return (
-    <section id="waitlist" className="section section-muted" aria-labelledby="waitlist-heading">
+    <section
+      id="waitlist"
+      className="section section-muted waitlist-section"
+      aria-labelledby="waitlist-heading"
+    >
       <div className="content waitlist">
         <div className="waitlist-copy">
           <h2 id="waitlist-heading" className="section-title">

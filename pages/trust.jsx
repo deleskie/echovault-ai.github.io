@@ -38,7 +38,7 @@ export default function TrustPage() {
         <link rel="alternate" hrefLang="x-default" href={`${SITE_URL}/trust`} />
       </Head>
       <Layout>
-        <section className="section" aria-labelledby="trust-page-heading">
+        <section className="section trust-hero" aria-labelledby="trust-page-heading">
           <div className="content">
             <h1 id="trust-page-heading" className="page-title">
               {t.trustPage.title}
