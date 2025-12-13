@@ -1111,20 +1111,20 @@ button:focus-visible {
 .blog-hero--grief::before {
   background-image:
     linear-gradient(135deg, rgba(15, 23, 42, 0.98), rgba(15, 118, 110, 0.9)),
-    url("/images/blog/grief-letters.jpg"),
+    url("/images/blog/grief-growth.jpg"),
     radial-gradient(circle at top left, rgba(56, 189, 248, 0.35), transparent 60%);
   background-image:
     linear-gradient(135deg, rgba(15, 23, 42, 0.98), rgba(15, 118, 110, 0.9)),
     -webkit-image-set(
-      url("/images/blog/grief-letters.webp") 1x,
-      url("/images/blog/grief-letters.jpg") 1x
+      url("/images/blog/grief-growth.webp") 1x,
+      url("/images/blog/grief-growth.jpg") 1x
     ),
     radial-gradient(circle at top left, rgba(56, 189, 248, 0.35), transparent 60%);
   background-image:
     linear-gradient(135deg, rgba(15, 23, 42, 0.98), rgba(15, 118, 110, 0.9)),
     image-set(
-      url("/images/blog/grief-letters.webp") 1x,
-      url("/images/blog/grief-letters.jpg") 1x
+      url("/images/blog/grief-growth.webp") 1x,
+      url("/images/blog/grief-growth.jpg") 1x
     ),
     radial-gradient(circle at top left, rgba(56, 189, 248, 0.35), transparent 60%);
 }
