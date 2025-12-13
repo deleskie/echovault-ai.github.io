@@ -1,4 +1,4 @@
-const DEFAULT_SITE_URL = "https://www.echovault-ai.com";
+const DEFAULT_SITE_URL = "http://www.echovault-ai.com";
 
 function normalizeSiteUrl(value) {
   if (!value) return DEFAULT_SITE_URL;
