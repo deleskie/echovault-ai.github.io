@@ -1091,20 +1091,20 @@ button:focus-visible {
 .blog-hero--recorded::before {
   background-image:
     linear-gradient(135deg, rgba(248, 250, 252, 0.96), rgba(254, 243, 199, 0.95)),
-    url("/images/blog/recorded-moment.jpg"),
+    url("/images/blog/recorded-chair.jpg"),
     radial-gradient(circle at top left, rgba(251, 146, 60, 0.28), transparent 60%);
   background-image:
     linear-gradient(135deg, rgba(248, 250, 252, 0.96), rgba(254, 243, 199, 0.95)),
     -webkit-image-set(
-      url("/images/blog/recorded-moment.webp") 1x,
-      url("/images/blog/recorded-moment.jpg") 1x
+      url("/images/blog/recorded-chair.webp") 1x,
+      url("/images/blog/recorded-chair.jpg") 1x
     ),
     radial-gradient(circle at top left, rgba(251, 146, 60, 0.28), transparent 60%);
   background-image:
     linear-gradient(135deg, rgba(248, 250, 252, 0.96), rgba(254, 243, 199, 0.95)),
     image-set(
-      url("/images/blog/recorded-moment.webp") 1x,
-      url("/images/blog/recorded-moment.jpg") 1x
+      url("/images/blog/recorded-chair.webp") 1x,
+      url("/images/blog/recorded-chair.jpg") 1x
     ),
     radial-gradient(circle at top left, rgba(251, 146, 60, 0.28), transparent 60%);
 }
@@ -1112,20 +1112,20 @@ button:focus-visible {
 .blog-hero--grief::before {
   background-image:
     linear-gradient(135deg, rgba(15, 23, 42, 0.98), rgba(15, 118, 110, 0.9)),
-    url("/images/blog/grief-growth.jpg"),
+    url("/images/blog/grief-notebook.jpg"),
     radial-gradient(circle at top left, rgba(56, 189, 248, 0.35), transparent 60%);
   background-image:
     linear-gradient(135deg, rgba(15, 23, 42, 0.98), rgba(15, 118, 110, 0.9)),
     -webkit-image-set(
-      url("/images/blog/grief-growth.webp") 1x,
-      url("/images/blog/grief-growth.jpg") 1x
+      url("/images/blog/grief-notebook.webp") 1x,
+      url("/images/blog/grief-notebook.jpg") 1x
     ),
     radial-gradient(circle at top left, rgba(56, 189, 248, 0.35), transparent 60%);
   background-image:
     linear-gradient(135deg, rgba(15, 23, 42, 0.98), rgba(15, 118, 110, 0.9)),
     image-set(
-      url("/images/blog/grief-growth.webp") 1x,
-      url("/images/blog/grief-growth.jpg") 1x
+      url("/images/blog/grief-notebook.webp") 1x,
+      url("/images/blog/grief-notebook.jpg") 1x
     ),
     radial-gradient(circle at top left, rgba(56, 189, 248, 0.35), transparent 60%);
 }
@@ -1154,20 +1154,20 @@ button:focus-visible {
 .blog-hero--families::before {
   background-image:
     linear-gradient(135deg, rgba(15, 23, 42, 0.98), rgba(76, 29, 149, 0.9)),
-    url("/images/blog/families-twin.jpg"),
+    url("/images/blog/families-letters.jpg"),
     radial-gradient(circle at top right, rgba(129, 140, 248, 0.35), transparent 60%);
   background-image:
     linear-gradient(135deg, rgba(15, 23, 42, 0.98), rgba(76, 29, 149, 0.9)),
     -webkit-image-set(
-      url("/images/blog/families-twin.webp") 1x,
-      url("/images/blog/families-twin.jpg") 1x
+      url("/images/blog/families-letters.webp") 1x,
+      url("/images/blog/families-letters.jpg") 1x
     ),
     radial-gradient(circle at top right, rgba(129, 140, 248, 0.35), transparent 60%);
   background-image:
     linear-gradient(135deg, rgba(15, 23, 42, 0.98), rgba(76, 29, 149, 0.9)),
     image-set(
-      url("/images/blog/families-twin.webp") 1x,
-      url("/images/blog/families-twin.jpg") 1x
+      url("/images/blog/families-letters.webp") 1x,
+      url("/images/blog/families-letters.jpg") 1x
     ),
     radial-gradient(circle at top right, rgba(129, 140, 248, 0.35), transparent 60%);
 }
