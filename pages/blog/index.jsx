@@ -5,6 +5,13 @@ import { SITE_URL } from "@config/site";
 
 const posts = [
   {
+    href: "/blog/echoes-in-the-grid",
+    title: "Echoes in the Grid: Why I Built EchoVault",
+    description:
+      "A founder story about science fiction, networks, grief, and building EchoVault as a humane way to leave more of ourselves for the people who come after.",
+    meta: "Founder story · 12 minute read"
+  },
+  {
     href: "/blog/we-should-have-recorded-this",
     title: 'The moment you realize "we should have recorded this"',
     description:
