@@ -5,6 +5,20 @@ import { SITE_URL } from "@config/site";
 
 const posts = [
   {
+    href: "/blog/the-drummer-walking-home",
+    title: "The Drummer Walking Home",
+    description:
+      "On the quiet after the noise, the walk back to ordinary life, and the small stories that disappear first.",
+    meta: "Personal essay · 10 minute read"
+  },
+  {
+    href: "/blog/small-town-snow",
+    title: "Small Town Snow",
+    description:
+      "Snow as a setting: quiet streets, warm windows, and the memory of walking downtown when Christmas felt bigger than you.",
+    meta: "Personal essay · 6 minute read"
+  },
+  {
     href: "/blog/echoes-in-the-grid",
     title: "Echoes in the Grid: Why I Built EchoVault",
     description:
@@ -68,11 +82,7 @@ export default function BlogIndexPage() {
             <div className="grid blog-list">
               {posts.map((post) => (
                 <article key={post.href} className="card blog-card">
-                  <Link
-                    href={post.href}
-                    className="blog-card-link"
-                    aria-label={`Read: ${post.title}`}
-                  >
+                  <Link href={post.href} className="blog-card-link" aria-label={`Read: ${post.title}`}>
                     <h2>{post.title}</h2>
                     <p>{post.description}</p>
                     <p className="blog-meta">{post.meta}</p>
