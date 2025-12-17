@@ -6,7 +6,7 @@ import TierPreview from "@components/TierPreview";
 import WaitlistCTA from "@components/WaitlistCTA";
 import TrustBlock from "@components/TrustBlock";
 import { useI18n } from "@components/I18nProvider";
-import { getAlternateLinks, localizeHashLink } from "@config/i18n";
+import { getAlternateLinks, localizeHashLink, localizePath } from "@config/i18n";
 import { SITE_URL } from "@config/site";
 
 export default function HomePage() {
@@ -259,7 +259,7 @@ export default function HomePage() {
               {t.home.founder.p2}
             </p>
             <p>
-              <Link href="/blog/echoes-in-the-grid" className="button button-secondary">
+              <Link href={localizePath(locale, "/blog/echoes-in-the-grid")} className="button button-secondary">
                 {t.home.founder.cta}
               </Link>
             </p>

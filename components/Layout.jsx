@@ -63,7 +63,7 @@ export default function Layout({ children }) {
           <nav className="nav" aria-label="Primary">
             <Link href={localized("/pricing")}>{t.layout.nav.pricing}</Link>
             <Link href={localized("/how-it-works")}>{t.layout.nav.howItWorks}</Link>
-            <Link href="/blog">{t.layout.nav.blog}</Link>
+            <Link href={localized("/blog")}>{t.layout.nav.blog}</Link>
           </nav>
           <div className="header-actions">
             <ThemeToggle />
@@ -141,7 +141,7 @@ export default function Layout({ children }) {
                 <Link href={localized("/pricing")}>{t.layout.nav.pricing}</Link>
               </li>
               <li>
-                <Link href="/blog">{t.layout.nav.blog}</Link>
+                <Link href={localized("/blog")}>{t.layout.nav.blog}</Link>
               </li>
             </ul>
           </div>

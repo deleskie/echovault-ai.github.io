@@ -106,6 +106,7 @@ export function swapLocaleInPath(asPath, targetLocale) {
 
 export function isLocalizedPath(basePath) {
   const normalized = (basePath || "/").replace(/\/+$/, "") || "/";
+  if (normalized === "/blog" || normalized.startsWith("/blog/")) return true;
   return ["/", "/pricing", "/how-it-works", "/trust", "/legal"].includes(normalized);
 }
 

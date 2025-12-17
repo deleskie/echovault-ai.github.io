@@ -187,7 +187,7 @@ export default function HowItWorksPage() {
                   </Link>
                 </div>
                 <p className="blog-back-link">
-                  <Link href="/blog/echoes-in-the-grid">
+                  <Link href={localized("/blog/echoes-in-the-grid")}>
                     {t.howItWorksPage.faq.blogLinkText}
                   </Link>
                 </p>
