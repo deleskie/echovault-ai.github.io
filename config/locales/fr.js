@@ -345,7 +345,7 @@ export default {
       hero: {
         title: "Investissez une fois pour garder leur voix proche.",
         subtitle:
-          "Trois façons de préserver les histoires, les rires et la sagesse qui comptent. Pas d’abonnement, hébergement longue durée inclus.",
+          "Trois façons de préserver les histoires, les rires et la sagesse qui comptent. Accès inclus au départ, renouvellement optionnel pour l’hébergement et les mises à jour.",
         ctaTiers: "Voir les offres",
         ctaHowItWorks: "Voir comment ça marche"
       },
@@ -360,7 +360,7 @@ export default {
           id: "gift",
           name: "Gift Tier",
           price: "$99",
-          hosting: "3 ans d’hébergement inclus",
+          hosting: "12 mois d’accès inclus, puis renouvellement optionnel",
           description:
             "Une manière simple et attentionnée de capturer un aperçu concentré de l’histoire de quelqu’un en une seule séance.",
           emotion:
@@ -381,7 +381,7 @@ export default {
           name: "Legacy Tier",
           price: "$499",
           originalPrice: "$750",
-          hosting: "10 ans d’hébergement inclus",
+          hosting: "18 mois d’accès inclus, puis renouvellement optionnel",
           description:
             "Un portrait riche et détaillé, conçu pour les familles qui veulent un récit plus complet : histoires, valeurs, et tournants.",
           emotion:
@@ -403,7 +403,7 @@ export default {
           id: "heirloom",
           name: "Heirloom Tier",
           price: "$5000",
-          hosting: "Hébergement à vie inclus",
+          hosting: "Hébergement 20 ans inclus",
           description:
             "Une expérience white‑glove multi‑sessions, pensée pour devenir une pièce durable des archives et traditions familiales.",
           emotion:
@@ -428,6 +428,8 @@ export default {
         primaryCta: "Aidez-moi à choisir",
         secondaryCta: "Parler au support"
       },
+      trustNote:
+        "Heirloom inclut 20 ans d’hébergement. Si EchoVault cesse, les coffres sont placés en fiducie et le téléchargement reste disponible.",
       compare: {
         title: "Comparer les offres en un coup d’œil",
         copy:
@@ -456,7 +458,7 @@ export default {
           },
           {
             label: "Hébergement",
-            values: ["3 ans", "10 ans", "À vie"]
+            values: ["12 mois + archive 3 ans", "18 mois + archive 10 ans", "20 ans"]
           },
           {
             label: "Support",

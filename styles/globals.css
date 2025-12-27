@@ -2186,6 +2186,13 @@ button:focus-visible {
   max-width: 48rem;
 }
 
+.pricing-trust-note {
+  margin-top: 1.5rem;
+  font-size: 0.95rem;
+  color: var(--text-subtle);
+  max-width: 48rem;
+}
+
 .pricing-compare-columns {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));

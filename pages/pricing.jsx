@@ -145,6 +145,11 @@ export default function PricingPage() {
                   </article>
                 ))}
               </div>
+              {t.pricing.trustNote ? (
+                <p className="pricing-trust-note">
+                  {t.pricing.trustNote}
+                </p>
+              ) : null}
             </div>
           </section>
 

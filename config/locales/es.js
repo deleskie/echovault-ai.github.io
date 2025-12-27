@@ -345,7 +345,7 @@ export default {
       hero: {
         title: "Invierte una vez para mantener su voz cerca.",
         subtitle:
-          "Tres formas de preservar las historias, las risas y la sabiduría que importan. Sin suscripciones y con alojamiento a largo plazo incluido.",
+          "Tres formas de preservar las historias, las risas y la sabiduría que importan. Acceso incluido al inicio, con renovación opcional para alojamiento y actualizaciones.",
         ctaTiers: "Ver niveles",
         ctaHowItWorks: "Ver cómo funciona"
       },
@@ -360,7 +360,7 @@ export default {
           id: "gift",
           name: "Gift Tier",
           price: "$99",
-          hosting: "3 años de alojamiento incluido",
+          hosting: "12 meses de acceso incluido, luego renovación opcional",
           description:
             "Una forma accesible y considerada de capturar un vistazo enfocado de la historia de alguien en una sola sesión.",
           emotion:
@@ -381,7 +381,7 @@ export default {
           name: "Legacy Tier",
           price: "$499",
           originalPrice: "$750",
-          hosting: "10 años de alojamiento incluido",
+          hosting: "18 meses de acceso incluido, luego renovación opcional",
           description:
             "Un retrato profundo y detallado para familias que quieren un registro más completo de historias, valores y momentos clave.",
           emotion:
@@ -403,7 +403,7 @@ export default {
           id: "heirloom",
           name: "Heirloom Tier",
           price: "$5000",
-          hosting: "Alojamiento de por vida incluido",
+          hosting: "Alojamiento incluido por 20 años",
           description:
             "Una experiencia white‑glove, de varias sesiones, diseñada para convertirse en parte del archivo y las tradiciones de tu familia.",
           emotion:
@@ -428,6 +428,8 @@ export default {
         primaryCta: "Ayúdame a elegir",
         secondaryCta: "Hablar con soporte"
       },
+      trustNote:
+        "Heirloom incluye 20 años de alojamiento. Si EchoVault cierra, las bóvedas quedan en fideicomiso y las descargas siguen disponibles.",
       compare: {
         title: "Comparar niveles de un vistazo",
         copy:
@@ -456,7 +458,7 @@ export default {
           },
           {
             label: "Alojamiento",
-            values: ["3 años", "10 años", "De por vida"]
+            values: ["12 meses + archivo 3 años", "18 meses + archivo 10 años", "20 años"]
           },
           {
             label: "Soporte",

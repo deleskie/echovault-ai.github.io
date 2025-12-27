@@ -1,6 +1,6 @@
-import fr from "./locales/fr";
-import es from "./locales/es";
-import hu from "./locales/hu";
+import fr from "./locales/fr.js";
+import es from "./locales/es.js";
+import hu from "./locales/hu.js";
 
 export const DEFAULT_LOCALE = "en";
 
@@ -471,7 +471,7 @@ const TRANSLATIONS = {
       hero: {
         title: "Invest once to keep their voice close.",
         subtitle:
-          "Three ways to preserve the stories, laughter, and wisdom that matter. No subscriptions, and long-term hosting included.",
+          "Three ways to preserve the stories, laughter, and wisdom that matter. Included access up front, with optional renewal for ongoing hosting and updates.",
         ctaTiers: "See tiers",
         ctaHowItWorks: "See How It Works"
       },
@@ -486,7 +486,7 @@ const TRANSLATIONS = {
           id: "gift",
           name: "Gift Tier",
           price: "$99",
-          hosting: "3 years of hosting included",
+          hosting: "12 months of included access, then optional renewal",
           description:
             "A thoughtful, approachable way to capture a focused snapshot of someone’s story in a single sitting.",
           emotion:
@@ -507,7 +507,7 @@ const TRANSLATIONS = {
           name: "Legacy Tier",
           price: "$499",
           originalPrice: "$750",
-          hosting: "10 years of hosting included",
+          hosting: "18 months of included access, then optional renewal",
           description:
             "A deep, richly detailed portrait built for families who want a fuller record of stories, values, and turning points.",
           emotion:
@@ -529,7 +529,7 @@ const TRANSLATIONS = {
           id: "heirloom",
           name: "Heirloom Tier",
           price: "$5000",
-          hosting: "Lifetime hosting included",
+          hosting: "20-year hosting included",
           description:
             "A white-glove, multi-session experience designed to become part of your family’s lasting archive and traditions.",
           emotion:
@@ -554,6 +554,8 @@ const TRANSLATIONS = {
         primaryCta: "Help Me Choose",
         secondaryCta: "Talk to Support"
       },
+      trustNote:
+        "Heirloom includes 20-year hosting. If EchoVault exits, vaults are held in trust and downloads remain available.",
       compare: {
         title: "Compare tiers at a glance",
         copy:
@@ -582,7 +584,7 @@ const TRANSLATIONS = {
           },
           {
             label: "Hosting",
-            values: ["3 years", "10 years", "Lifetime"]
+            values: ["12 months + 3-year archive", "18 months + 10-year archive", "20 years"]
           },
           {
             label: "Support",

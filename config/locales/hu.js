@@ -345,7 +345,7 @@ export default {
       hero: {
         title: "Egyszer fizetsz, hogy közel maradjon a hangja.",
         subtitle:
-          "Három út a történetek, nevetések és bölcsesség megőrzéséhez. Nincs előfizetés, a hosszú távú tárhely benne van.",
+          "Három út a történetek, nevetések és bölcsesség megőrzéséhez. Kezdő hozzáférés benne van, opcionális megújítással a tárhelyhez és frissítésekhez.",
         ctaTiers: "Csomagok",
         ctaHowItWorks: "Hogyan működik"
       },
@@ -360,7 +360,7 @@ export default {
           id: "gift",
           name: "Gift Tier",
           price: "$99",
-          hosting: "3 év tárhely benne van",
+          hosting: "12 hónap hozzáférés benne van, utána opcionális megújítás",
           description:
             "Könnyen megközelíthető, figyelmes módja annak, hogy egyetlen alkalom alatt rögzíts egy fókuszált történetrészletet.",
           emotion:
@@ -381,7 +381,7 @@ export default {
           name: "Legacy Tier",
           price: "$499",
           originalPrice: "$750",
-          hosting: "10 év tárhely benne van",
+          hosting: "18 hónap hozzáférés benne van, utána opcionális megújítás",
           description:
             "Mély, részletes portré olyan családoknak, akik teljesebb képet szeretnének megőrizni történetekről, értékekről és fordulópontokról.",
           emotion:
@@ -403,7 +403,7 @@ export default {
           id: "heirloom",
           name: "Heirloom Tier",
           price: "$5000",
-          hosting: "Élettartam tárhely benne van",
+          hosting: "20 éves tárhely benne van",
           description:
             "White‑glove, több alkalmas élmény, amit úgy tervezünk, hogy a családod archívumának és hagyományainak része legyen.",
           emotion:
@@ -428,6 +428,8 @@ export default {
         primaryCta: "Segíts választani",
         secondaryCta: "Beszélj a supporttal"
       },
+      trustNote:
+        "A Heirloom 20 éves tárhelyet tartalmaz. Ha az EchoVault megszűnik, a trezorok bizalmi kezelésbe kerülnek, és a letöltés továbbra is elérhető.",
       compare: {
         title: "Összehasonlítás egy pillantással",
         copy:
@@ -456,7 +458,7 @@ export default {
           },
           {
             label: "Tárhely",
-            values: ["3 év", "10 év", "Élettartam"]
+            values: ["12 hónap + 3 év archívum", "18 hónap + 10 év archívum", "20 év"]
           },
           {
             label: "Támogatás",
