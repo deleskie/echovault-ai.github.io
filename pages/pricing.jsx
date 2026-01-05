@@ -254,6 +254,42 @@ export default function PricingPage() {
             </div>
           </section>
 
+          <section className="section pricing-section" aria-label="More details">
+            <div className="content">
+              <h2 className="section-title">More ways we help families</h2>
+              <p className="lead">
+                If you’re organizing a bigger family archive, these pages explain our storage and photo
+                care options in plain language.
+              </p>
+              <div className="grid grid-3">
+                <div className="card">
+                  <h3>Storage</h3>
+                  <p>
+                    Add a simple, private place for photos, audio, and family files. Pay once or spread
+                    the same plan across 24 months.
+                  </p>
+                  <p>
+                    <Link className="button button-secondary" href={localized("/storage")}>
+                      View storage options
+                    </Link>
+                  </p>
+                </div>
+                <div className="card">
+                  <h3>Photo care</h3>
+                  <p>
+                    Free everyday corrections, plus optional credit packs for deeper restorations when
+                    an image needs more help.
+                  </p>
+                  <p>
+                    <Link className="button button-secondary" href={localized("/photo-restoration")}>
+                      View photo care
+                    </Link>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+
           <section className="section pricing-section" aria-labelledby="pricing-trust-heading">
             <div className="content">
               <TrustBlock headingId="pricing-trust-heading" />
