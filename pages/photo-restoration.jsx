@@ -6,12 +6,12 @@ import { useI18n } from "@components/I18nProvider";
 import { getAlternateLinks, localizePath } from "@config/i18n";
 import { SITE_URL } from "@config/site";
 
-const INCLUDED_BASIC_PHOTOS = "TBD";
+const INCLUDED_BASIC_PHOTOS = "Included on all photos";
 
 const CREDIT_PACKS = [
-  { id: "small", name: "Small pack", credits: "TBD", price: "TBD" },
-  { id: "medium", name: "Family pack", credits: "TBD", price: "TBD" },
-  { id: "large", name: "Archive pack", credits: "TBD", price: "TBD" }
+  { id: "trial", name: "Starter credits", credits: "5 credits", price: "Included (Gift + Legacy trial)" },
+  { id: "pack-100", name: "Pack A", credits: "100 credits", price: "$29.99 (valid 12 months)" },
+  { id: "pack-200", name: "Pack B", credits: "200 credits", price: "$39.99 (no expiration)" }
 ];
 
 export default function PhotoRestorationPage() {
@@ -28,7 +28,7 @@ export default function PhotoRestorationPage() {
         <title>EchoVault Photo Care – Corrections, restoration, and color help</title>
         <meta
           name="description"
-          content="Gentle photo corrections are included at no cost, with optional credit packs for deeper restorations. Every image is reviewed by a human."
+          content="Gentle photo corrections are included at no cost, with optional credit packs for deeper restorations. Every Pro Restoration image is reviewed by a human."
         />
         <meta property="og:title" content="EchoVault Photo Care – Corrections, restoration, and color help" />
         <meta
@@ -102,7 +102,7 @@ export default function PhotoRestorationPage() {
           <section className="section section-muted" aria-labelledby="photo-studio-heading">
             <div className="content">
               <h2 id="photo-studio-heading" className="section-title">
-                Optional: deep restorations (credit-based)
+                Optional: Pro Restoration (credit-based)
               </h2>
               <p className="lead">
                 Some photos need more than a quick touch-up: tears, heavy damage, missing corners, or
@@ -129,7 +129,7 @@ export default function PhotoRestorationPage() {
                   <h3 className="section-title">How credits work</h3>
                   <p className="pricing-compare-copy">
                     One credit covers one photo. We use modern restoration tools to speed up the careful
-                    work, and a human reviews every image before it’s delivered.
+                    work, and a human reviews every Pro Restoration image before it’s delivered.
                   </p>
                 </div>
                 <div className="pricing-compare-columns">
@@ -177,4 +177,3 @@ export default function PhotoRestorationPage() {
     </>
   );
 }
-
