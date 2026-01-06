@@ -62,6 +62,8 @@ export default function Layout({ children }) {
           </Link>
           <nav className="nav" aria-label="Primary">
             <Link href={localized("/pricing")}>{t.layout.nav.pricing}</Link>
+            <Link href={localized("/storage")}>{t.layout.nav.storage}</Link>
+            <Link href={localized("/photo-restoration")}>{t.layout.nav.photoCare}</Link>
             <Link href={localized("/how-it-works")}>{t.layout.nav.howItWorks}</Link>
             <Link href={localized("/blog")}>{t.layout.nav.blog}</Link>
           </nav>
@@ -139,6 +141,12 @@ export default function Layout({ children }) {
               </li>
               <li>
                 <Link href={localized("/pricing")}>{t.layout.nav.pricing}</Link>
+              </li>
+              <li>
+                <Link href={localized("/storage")}>{t.layout.nav.storage}</Link>
+              </li>
+              <li>
+                <Link href={localized("/photo-restoration")}>{t.layout.nav.photoCare}</Link>
               </li>
               <li>
                 <Link href={localized("/blog")}>{t.layout.nav.blog}</Link>

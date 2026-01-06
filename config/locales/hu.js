@@ -5,6 +5,8 @@ export default {
       nav: {
         home: "Kezdőlap",
         pricing: "Árak",
+        storage: "Tárhely",
+        photoCare: "Fotóápolás",
         howItWorks: "Hogyan működik",
         blog: "Blog"
       },

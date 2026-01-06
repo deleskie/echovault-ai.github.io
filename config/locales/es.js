@@ -5,6 +5,8 @@ export default {
       nav: {
         home: "Inicio",
         pricing: "Precios",
+        storage: "Almacenamiento",
+        photoCare: "Cuidado de fotos",
         howItWorks: "Cómo funciona",
         blog: "Blog"
       },

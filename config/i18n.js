@@ -131,6 +131,8 @@ const TRANSLATIONS = {
       nav: {
         home: "Home",
         pricing: "Pricing",
+        storage: "Storage",
+        photoCare: "Photo Care",
         howItWorks: "How It Works",
         blog: "Blog"
       },
